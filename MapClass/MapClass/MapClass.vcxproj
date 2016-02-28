@@ -123,6 +123,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Map.h" />
+    <ClInclude Include="MapStruct.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\..\..\..\..\Desktop\cities.txt" />
