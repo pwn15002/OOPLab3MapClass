@@ -34,8 +34,8 @@ public:
 	void Clear();
 	bool HasKey();
 	bool HasValue();
-	V* ToArray();
-	V& Operator[](const K key);
+	V * ToArray();
+	V & operator[] (const K key);
 	Map();
 	~Map();
 };
