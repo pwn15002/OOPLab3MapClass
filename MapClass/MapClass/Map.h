@@ -21,22 +21,51 @@ You can read more about it here: http://www.cplusplus.com/forum/general/45776/
 
 #include "MapStruct.h"
 
-template <class K, class V>
 class Map
 {
 private:
-	int nOfElements;
-	MapElement * head;
+	int numOfElements;
+	Dict<int, int> * head;
 public:
-	void Add(const K key, const V value);
-	void Remove(const K key);
+	template <class K> void Remove(const K key);
 	int Count();
 	void Clear();
 	bool HasKey();
 	bool HasValue();
-	V * ToArray();
-	V & operator[] (const K key);
+	template <class K, class V> V * ToArray();
+	template <class K, class V> V & operator[] (const K key);
 	Map();
 	~Map();
+	template<class K, class V> void Add(const K key, const V value);
 };
 
+Map::Map()
+{
+	numOfElements = 0;
+}
+
+Map::~Map()
+{
+
+}
+
+template<class K, class V>
+void Map::Add(const K key, const V value)
+{
+	Dict<K, V> * tmp = new Dict<K, V>;
+	
+	tmp->key = key;
+	tmp->value = value;
+	numOfElements++;
+
+	if (numOfElements == 0)
+		tmp->next = nullptr;
+	else
+		tmp->next = head;
+	head = tmp;
+}
+
+int Map::Count()
+{
+	return numOfElements;
+}

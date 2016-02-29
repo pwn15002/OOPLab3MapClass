@@ -4,10 +4,18 @@ Datatype for Map class.
 */
 
 template<class K, class V>
-struct MapElement
+struct Dictionary
 {
 	K key;
 	V value;
-	struct MapElement* next;
+	struct Dictionary * next;
 };
 
+template<class K, class V>
+class Dict
+{
+public:
+	K key;
+	V value;
+	Dict * next;
+};
