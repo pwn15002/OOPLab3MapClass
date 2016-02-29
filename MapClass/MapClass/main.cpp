@@ -9,11 +9,12 @@ int main()
 
 	Map<char *, int> * myMap = new Map<char *, int>();
 
-	myMap->Add("Hej", 12);
-	myMap->Add("Hejsan", 15);
+	myMap->Add("kalle", 12);
+	myMap->Add("Erik", 11);
+	myMap->Add("kalle", 12);
+	myMap->Add("Erik", 11);
 
 	std::cout << myMap->Count() << std::endl;
 
-	getchar();
 	return 0;
 }

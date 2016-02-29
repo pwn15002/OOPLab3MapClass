@@ -38,17 +38,17 @@ public:
 	template <class K, class V> V & operator[] (const K key);
 	Map();
 	~Map();
-	template<class K, class V> void Add(const K key, const V value);
+	void Add(const K key, const V value);
 };
 
 template <class K, class V>
-Map<K, V>::Map()
+Map<K,V>::Map()
 {
 	numOfElements = 0;
 }
 
 template <class K, class V>
-Map<K, V>::~Map()
+Map<K,V>::~Map()
 {
 
 }
@@ -69,7 +69,7 @@ void Map<K, V>::Add(const K key, const V value)
 	head = tmp;
 }
 
-template <class K, class V>
+template<class K, class V>
 int Map<K, V>::Count()
 {
 	return numOfElements;
