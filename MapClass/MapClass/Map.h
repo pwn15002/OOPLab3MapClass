@@ -21,11 +21,13 @@ You can read more about it here: http://www.cplusplus.com/forum/general/45776/
 
 #include "MapStruct.h"
 
+
+template <class K, class V>
 class Map
 {
 private:
 	int numOfElements;
-	Dict<int, int> * head;
+	Dict<K, V> * head;
 public:
 	template <class K> void Remove(const K key);
 	int Count();
@@ -39,18 +41,20 @@ public:
 	template<class K, class V> void Add(const K key, const V value);
 };
 
-Map::Map()
+template <class K, class V>
+Map<K, V>::Map()
 {
 	numOfElements = 0;
 }
 
-Map::~Map()
+template <class K, class V>
+Map<K, V>::~Map()
 {
 
 }
 
 template<class K, class V>
-void Map::Add(const K key, const V value)
+void Map<K, V>::Add(const K key, const V value)
 {
 	Dict<K, V> * tmp = new Dict<K, V>;
 	
@@ -65,7 +69,8 @@ void Map::Add(const K key, const V value)
 	head = tmp;
 }
 
-int Map::Count()
+template <class K, class V>
+int Map<K, V>::Count()
 {
 	return numOfElements;
 }
